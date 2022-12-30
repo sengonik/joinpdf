@@ -33,7 +33,7 @@
                 <div class="col-10 gy-5 d-grid mb-5">
                     <button type="button" class="btn btn-secondary btn-lg" id="merge">Merge</button>
                     <button type="button" class="btn btn-secondary btn-lg" id="merging" disabled>
-                        Merging...
+                        Merging PDF...
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </button>
                 </div>
