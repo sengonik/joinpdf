@@ -1,0 +1,1 @@
+removeFile(arguments[0])
