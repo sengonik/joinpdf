@@ -23,6 +23,11 @@
     background-color: rgb(255, 220, 220);
 }
 
+.btn-secondary {
+    color: #fff;
+    background-color: #1e5586;
+    border-color: #6c757d;
+
 #merging {
     display: none;
 }
