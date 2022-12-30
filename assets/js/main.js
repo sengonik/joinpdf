@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('#merge').addEventListener('click', () => {
         if (pdfFiles.length < 2) {
-            alert('Please select at least 2 PDF files');
+            alert('Sengonik select at least 2 PDF files');
             return;
         }
         document.querySelector('#merge').style.display = 'none';
