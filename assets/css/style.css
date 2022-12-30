@@ -23,10 +23,16 @@
     background-color: rgb(255, 220, 220);
 }
 
+.btn-group-lg>.btn, .btn-lg {
+    padding: 0.2rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.8rem;
+}
 .btn-secondary {
     color: #b61b1be3;
     background-color: #1e5586;
     border-color: #159459;
+}
 
 #merging {
     display: none;
