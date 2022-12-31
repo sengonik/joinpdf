@@ -1,9 +1,3 @@
-function autoupdate() {
-  $('#bird').css('display', 'none');
-  setTimeout(function(){$('#bird').css('display', 'block')},2000);
-  setTimeout(autoupdate,2000);
-}  
-setTimeout(autoupdate,4000);
 let pdfFiles = [];
 window.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#fileInput').addEventListener('change', (event) => {
