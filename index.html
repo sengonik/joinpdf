@@ -24,7 +24,7 @@
                     </label>
                 </div>
             </div>
-            <div class="row" id="bird" style="display:none;>               
+            <div class="row" id="bird" style="visibility: visible;>               
                 <div class="col gy-5 text-center fs-5" id="nofile"> 
                     Come on grab your files                    
                 </div>
@@ -52,20 +52,20 @@
         function show()
         {
             if (document.getElementById)
-            document.getElementById("bird").style.display = "block";
+            document.getElementById("bird").style.visibility = "visible";
         }
         // blink "off" state
         function hide()
         {
             if (document.getElementById)
-            document.getElementById("bird").style.display = "none";
+            document.getElementById("bird").style.visibility = "hidden";
         }
         // toggle "on" and "off" states every 450 ms to achieve a blink effect
         // end after 4500 ms (less than five seconds)
-        for(var i=900; i < 4500; i=i+900)
+        for(var i=2000; i < 22000; i=i+2000)
         {
             setTimeout("hide()",i);
-            setTimeout("show()",i+450);
+            setTimeout("show()",i+1000);
         }
         -->
         </script>
