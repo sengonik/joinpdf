@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 function addFile(id, filename) {
     if (id === 0) {
-        document.querySelector('#nofile').innerHTML = 'Merges...' ;
+        document.querySelector('#nofile').innerHTML = '';
         /*function show(){if (document.getElementById)document.getElementById("nofile").style.visibility = "visible";}
         function hide(){if (document.getElementById)document.getElementById("nofile").style.visibility = "hidden";} // toggle "on" and "off" states every 450 ms to achieve a blink effect
         // end after 4500 ms (less than five seconds)
