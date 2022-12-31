@@ -70,7 +70,7 @@ function removeFile(event) {
         document.querySelector('#filename' + i).innerHTML = pdfFiles[i].name;
     }
     if (pdfFiles.length === 0) {
-        document.querySelector('#nofile').innerHTML = 'No file selected';
+        document.querySelector('#nofile').innerHTML = 'Dropped files here...';
     }
 }
 
