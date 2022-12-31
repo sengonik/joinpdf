@@ -24,7 +24,7 @@
                     </label>
                 </div>
             </div>
-            <div class="row" id="bird">               
+            <div class="row" id="bird" style="display:none;>               
                 <div class="col gy-5 text-center fs-5" id="nofile"> 
                     Come on grab your files                    
                 </div>
@@ -46,5 +46,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/pdf-lib@1.4.0/dist/pdf-lib.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>function autoupdate() {$('#bird').css('display', 'none');setTimeout(function(){$('#bird').css('display', 'block')},2000);setTimeout(autoupdate,13000);}setTimeout(autoupdate,2000);</script>
+    <script type="text/javascript">
+        <!--
+        // blink "on" state
+        function show()
+        {
+            if (document.getElementById)
+            document.getElementById("bird").style.display = "block";
+        }
+        // blink "off" state
+        function hide()
+        {
+            if (document.getElementById)
+            document.getElementById("bird").style.display = "none";
+        }
+        // toggle "on" and "off" states every 450 ms to achieve a blink effect
+        // end after 4500 ms (less than five seconds)
+        for(var i=900; i < 4500; i=i+900)
+        {
+            setTimeout("hide()",i);
+            setTimeout("show()",i+450);
+        }
+        -->
+        </script>
 </html>
