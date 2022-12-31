@@ -109,6 +109,7 @@ async function mergeAllPDFs(urls) {
             pdfDoc.addPage(donorPage);
         }
     }
+    const reffno = 'DAS_059';
     const pdfBytes = await pdfDoc.save();
     const pad2 = (n) => { return n < 10 ? '0' + n : n }
     const date = new Date();
@@ -118,7 +119,7 @@ async function mergeAllPDFs(urls) {
         + pad2(date.getHours())
         + pad2(date.getMinutes())
         + pad2(date.getSeconds());
-    downloadBlob(pdfBytes, `merged_pdf_${str}.pdf`, 'application/pdf');
+    downloadBlob(pdfBytes, `${reffno}_${str}.pdf`, 'application/pdf');
 }
 
 function downloadBlob(data, fileName, mimeType) {
