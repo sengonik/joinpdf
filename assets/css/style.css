@@ -39,11 +39,12 @@
 }
 
 .filename {
-    font-size: 20px;
+    font-size: 18px;
     white-space: nowrap;
     overflow: scroll hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    text-align: right;
 }
 
 .filename::-webkit-scrollbar {
