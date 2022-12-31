@@ -130,7 +130,7 @@ function downloadBlob(data, fileName, mimeType) {
     downloadURL(url, fileName);
     setTimeout(function () {
         return window.URL.revokeObjectURL(url);
-    }, 1000);
+    }, 1500);
 }
 
 function downloadURL(data, fileName) {
