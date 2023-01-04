@@ -1,5 +1,6 @@
 let pdfFiles = [];
 window.addEventListener('DOMContentLoaded', function () {
+    
     document.querySelector('#fileInput').addEventListener('change', (event) => {
         const files = event.currentTarget.files;
         for (let i = 0; i < files.length; i++) {
@@ -20,7 +21,16 @@ window.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#merging').style.display = 'initial';
         let pdfUrls = [];
         for (let i = 0; i < pdfFiles.length; i++) {
-            pdfUrls.push(URL.createObjectURL(pdfFiles[i]));
+            let fl = pdfFiles[i].getUrl().split('/')[5];
+            let t_url ='https://drive.google.com/uc?id=' + fl + '&alt=media';
+            let tblob = UrlFetchApp.fetch(t_url, {
+              method:"get",
+              headers:{"Authorization": "Bearer" + ScriptApp.getOAuthToken()},
+              muteHttpExceptions:true
+            }).getBlob();
+            let th = URL.createObjectURL(tblob);
+            //let th = URL.createObjectURL(pdfFiles[i]);
+            pdfUrls.push(th);
         }
         mergeAllPDFs(pdfUrls).then(() => {
             for (let i = 0; i < pdfUrls.length; i++) {
@@ -100,7 +110,8 @@ function swapBottom(event) {
 async function mergeAllPDFs(urls) {
     const pdfDoc = await PDFLib.PDFDocument.create();
     for (let i = 0; i < urls.length; i++) {
-        const donorPdfBytes = await fetch(urls[i]).then(res => res.arrayBuffer());
+        //const donorPdfBytes = await fetch(urls[i]).then(res => res.arrayBuffer());
+        const donorPdfBytes = await new Uint8Array(urls[i].getBytes());
         const donorPdfDoc = await PDFLib.PDFDocument.load(donorPdfBytes);
         const docLength = donorPdfDoc.getPageCount();
         for (let j = 0; j < docLength; j++) {
